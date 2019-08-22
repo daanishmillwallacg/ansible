@@ -11,7 +11,7 @@
       ssh_password_enabled: false
       ssh_public_keys:
         - path: /home/daanish/.ssh/authorized_keys
-          key_data: {{ lookup('env','$VM_PUB') }}
+          key_data: "{{ lookup('env','$VM_PUB') }}"
       image:
         offer: CentOS
         publisher: OpenLogic
