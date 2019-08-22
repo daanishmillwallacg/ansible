@@ -2,7 +2,7 @@
   hosts: localhost
   connection: local
   tasks: 
- - name: Create virtual machine
+  - name: Create virtual machine
     azure_rm_virtualmachine:
       resource_group: ansible-inventory-test-rg
       name: testvm10
