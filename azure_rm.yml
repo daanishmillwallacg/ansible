@@ -1,13 +1,17 @@
-- name: Create virtual machine
-  azure_rm_virtualmachine:
-    resource_group: ansible-inventory-test-rg
-    name: testvm10
-    vm_size: Standard_D1
-    admin_username: chouseknecht
-    ssh_password_enabled: false
-    ssh_public_keys: "{{ lookup('env','$VM_PK') }}"
-    image:
-      offer: CentOS
-      publisher: OpenLogic
-      sku: '7.1'
-      version: latest
+- name: Create Azure VM
+  hosts: localhost
+  connection: local
+  tasks: 
+ - name: Create virtual machine
+    azure_rm_virtualmachine:
+      resource_group: ansible-inventory-test-rg
+      name: testvm10
+      vm_size: Standard_D1
+      admin_username: chouseknecht
+      ssh_password_enabled: false
+      ssh_public_keys: "{{ lookup('env','$VM_PK') }}"
+      image:
+        offer: CentOS
+        publisher: OpenLogic
+        sku: '7.1'
+        version: latest
