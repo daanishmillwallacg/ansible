@@ -1,26 +1,6 @@
 - name: Create Azure VM
   hosts: localhost
   connection: local
-  tasks: 
-  - name: Create virtual machine
-    azure_rm_virtualmachine:
-      resource_group: ansible-inventory-test-rg
-      name: testvm10
-      vm_size: Standard_D1
-      admin_username: ansibleuser
-      ssh_password_enabled: false
-      ssh_public_keys:
-        - path: /home/daanish/.ssh/authorized_keys
-          key_data: >-
-            ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAw+bTSbb5C2Cef7beq4mQ9NTK4w6/cMvo7eVtWEY/1qlczWxIVa0udaxuaWzRNb+Ifvg/pDwz6xSE9Vpv6aPxAMG338MLEqpbHQ008m06a0rH1ZHt3qTwzREdG7Av+KzUnJDGYJJa2TZY7EBaG7IpCgf8AgG8+OmG6T/6k6wf/zCHjwKgw0tRNAOiBK33vd5aerxGnR3IP0VWPfc5DFivNezmE0918VgKz0t5clCScVxXwaqD5h2Wc/m86hZuKwjpJDHeVyrOexMMlb51pGJs2n3pr0vq2WAM19mZpbakuweGS74Y5TbNT7+S6Sjrybh2Yti7Bcd07iep4MaWW7gwOQ== rsa-key-20181031
-      image:
-        offer: CentOS
-        publisher: OpenLogic
-        sku: '7.1'
-        version: latest
-- name: Create Azure VM
-  hosts: localhost
-  connection: local
   tasks:
   - name: Create resource group
     azure_rm_resourcegroup:
@@ -70,11 +50,12 @@
       resource_group: ansible-inventory-test-rg
       name: myVM
       vm_size: Standard_DS1_v2
-      admin_username: azureuser
+      admin_username: daanish
       ssh_password_enabled: false
       ssh_public_keys:
-        - path: /home/azureuser/.ssh/authorized_keys
-          key_data: <your-key-data>
+        - path: /home/daanish/.ssh/authorized_keys
+          key_data: >-
+            ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAw+bTSbb5C2Cef7beq4mQ9NTK4w6/cMvo7eVtWEY/1qlczWxIVa0udaxuaWzRNb+Ifvg/pDwz6xSE9Vpv6aPxAMG338MLEqpbHQ008m06a0rH1ZHt3qTwzREdG7Av+KzUnJDGYJJa2TZY7EBaG7IpCgf8AgG8+OmG6T/6k6wf/zCHjwKgw0tRNAOiBK33vd5aerxGnR3IP0VWPfc5DFivNezmE0918VgKz0t5clCScVxXwaqD5h2Wc/m86hZuKwjpJDHeVyrOexMMlb51pGJs2n3pr0vq2WAM19mZpbakuweGS74Y5TbNT7+S6Sjrybh2Yti7Bcd07iep4MaWW7gwOQ== rsa-key-20181031
       network_interfaces: myNIC
       image:
         offer: CentOS
