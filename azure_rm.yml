@@ -7,7 +7,7 @@
       resource_group: ansible-inventory-test-rg
       name: testvm10
       vm_size: Standard_D1
-      admin_username: chouseknecht
+      admin_username: ansibleuser
       ssh_password_enabled: false
       ssh_public_keys:
         - path: "{{ lookup('env','$VM_PUB_PATH') }}"
