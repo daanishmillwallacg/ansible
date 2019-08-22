@@ -9,7 +9,9 @@
       vm_size: Standard_D1
       admin_username: chouseknecht
       ssh_password_enabled: false
-      ssh_public_keys: "{{ lookup('env','$VM_PK') }}"
+      ssh_public_keys:
+      - path: "{{ lookup('env','$VM_PUB_PATH') }}"
+        key_data: "{{ lookup('env','$VM_PUB') }}"
       image:
         offer: CentOS
         publisher: OpenLogic
