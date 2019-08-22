@@ -10,8 +10,8 @@
       admin_username: ansibleuser
       ssh_password_enabled: false
       ssh_public_keys:
-      - path: "{{ lookup('env','$VM_PUB_PATH') }}"
-        key_data: "{{ lookup('env','$VM_PUB') }}"
+        - path: /home/daanish/.ssh/authorized_keys
+          key_data: {{ lookup('env','$VM_PUB') }}
       image:
         offer: CentOS
         publisher: OpenLogic
