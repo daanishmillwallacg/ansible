@@ -13,8 +13,9 @@
       admin_username: ansibleuser
       ssh_password_enabled: false
       ssh_public_keys:
-        - path: "{{PUB_PATH}}"
-          key_data: "{{PUB}}"
+        - path: /home/daanish/.ssh/authorized_keys
+          key_data: >-
+            ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAw+bTSbb5C2Cef7beq4mQ9NTK4w6/cMvo7eVtWEY/1qlczWxIVa0udaxuaWzRNb+Ifvg/pDwz6xSE9Vpv6aPxAMG338MLEqpbHQ008m06a0rH1ZHt3qTwzREdG7Av+KzUnJDGYJJa2TZY7EBaG7IpCgf8AgG8+OmG6T/6k6wf/zCHjwKgw0tRNAOiBK33vd5aerxGnR3IP0VWPfc5DFivNezmE0918VgKz0t5clCScVxXwaqD5h2Wc/m86hZuKwjpJDHeVyrOexMMlb51pGJs2n3pr0vq2WAM19mZpbakuweGS74Y5TbNT7+S6Sjrybh2Yti7Bcd07iep4MaWW7gwOQ== rsa-key-20181031
       image:
         offer: CentOS
         publisher: OpenLogic
